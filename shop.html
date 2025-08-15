@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAGFIT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER SECTION ===== -->
+    <header id="header" class="shadow-sm bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
+                <!-- Hamburger for mobile -->
+                <button class="btn btn-light me-3 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sideMenu" aria-controls="sideMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <ul class="navbar-nav flex-row d-none d-lg-flex">
+                    <li class="nav-item mx-2 fw-bold"><a href="index.html" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item mx-2 fw-bold"><a href="shop.html" class="nav-link text-white">Shop</a></li>
+                    <li class="nav-item mx-2 fw-bold"><a href="blog.html" class="nav-link text-white">Blog</a></li>
+                    <li class="nav-item mx-2 fw-bold position-relative">
+                        <a href="arrivals.html" class="nav-link text-danger">New Arrivals</a>
+                        <span class="position-absolute bottom-0 start-50 translate-middle-x"
+                            style="height:2px;width:30px;background:red;"></span>
+                    </li>
+                    <li class="nav-item mx-2 fw-bold"><a href="contact.html" class="nav-link text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Logo -->
+                <a class="navbar-brand mx-auto d-none d-lg-block" href="#">
+                    <img src="./logo.png" alt="SNAGFIT Logo" height="40">
+                </a>
+
+                <!-- Search & Icons -->
+                <div class="d-flex align-items-center ms-auto">
+                    <div class="input-group me-3 position-relative">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control"
+                                placeholder="What am I looking for?">
+                            <span class="input-group-text" id="micBtn"><i class="fas fa-microphone"></i></span>
+                            <span class="input-group-text" id="searchBtn"><i class="fas fa-search"></i></span>
+                        </div>
+
+                    </div>
+                    <a href="contact.html" class="btn btn-link text-white me-2"><i
+                            class="fas fa-map-marker-alt"></i></a>
+                    <a href="profile.html" class="btn btn-link text-white me-2"><i class="fas fa-user"></i></a>
+                    <a href="wishlist.html" class="btn btn-link text-white me-2"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="btn btn-link text-white"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" aria-labelledby="sideMenuLabel">
+        <div class="offcanvas-header">
+            <h5 id="sideMenuLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="arrivals.html" class="nav-link">New Arrivals</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section id="page-header" class="text-center text-white d-flex align-items-center justify-content-center">
+        <div>
+            <h2>#stayhome</h2>
+            <p>Save more with coupons & up to 70% off</p>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS SECTION ===== -->
+    <section id="product1" class="py-5">
+        <div class="container">
+
+            <!-- Product Row -->
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p1.png" alt="Astronaut T-shirt" class="img-fluid">
+                        <div class="des">
+                            <span>Adidas</span>
+                            <h5>Astronaut T-shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h4>$78</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p2.png" alt="Vintage Print T-shirt" class="img-fluid">
+                        <div class="des">
+                            <span>Nike</span>
+                            <h5>Vintage Print T-shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$65</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p3.png" alt="Graphic Oversized T-shirt" class="img-fluid">
+                        <div class="des">
+                            <span>Zara</span>
+                            <h5>Graphic Oversized T-shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$72</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p4.png" alt="Minimalist Cotton T-shirt" class="img-fluid">
+                        <div class="des">
+                            <span>H&M</span>
+                            <h5>Minimalist Cotton T-shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$50</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/P5.png" alt="Casual Hoodie" class="img-fluid">
+                        <div class="des">
+                            <span>Puma</span>
+                            <h5>Casual Hoodie</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h4>$90</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p6.png" alt="Sports Jacket" class="img-fluid">
+                        <div class="des">
+                            <span>Reebok</span>
+                            <h5>Sports Jacket</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$110</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p7.png" alt="Slim Fit Polo" class="img-fluid">
+                        <div class="des">
+                            <span>Lacoste</span>
+                            <h5>Slim Fit Polo</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$85</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="./products_img/p8.png" alt="Denim Jacket" class="img-fluid">
+                        <div class="des">
+                            <span>Levi's</span>
+                            <h5>Denim Jacket</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h4>$120</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== END FEATURED PRODUCTS ===== -->
+
+    <!-- ===== PAGINATION ===== -->
+    <section id="pagination" class="py-4">
+        <div class="container text-center">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!-- ===== END PAGINATION ===== -->
+
+    <!-- ===== NEWSLETTER SECTION ===== -->
+    <section id="newsletter" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Newsletter Text -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="nwstext">
+                        <h4>Sign Up For Newsletter</h4>
+                        <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+                    </div>
+                </div>
+
+                <!-- Newsletter Form -->
+                <div class="col-lg-6 col-md-12">
+                    <form class="newsletter-form d-flex">
+                        <input type="text" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-signup" type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== END NEWSLETTER ===== -->
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Column 1: Contact Info -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h3 class="logo">SNAGFIT</h3>
+                    <h5>Contact</h5>
+                    <p><strong>Address:</strong> 123 Street Name, City, Country</p>
+                    <p><strong>Phone:</strong> +91 9876543210</p>
+                    <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: About -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>About</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: My Account -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>My Account</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Payment -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>Payment Gateways</h5>
+                    <img src="assets/payments.png" alt="Payment Methods" class="img-fluid mt-2">
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom text-center mt-4">
+                <p>© 2025 THE SNAGFIT STORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.querySelector("#searchInput");
+            const micBtn = document.querySelector("#micBtn");
+            const searchBtn = document.querySelector("#searchBtn");
+
+            // Search Button Action
+            searchBtn.addEventListener("click", function () {
+                if (searchInput.value.trim() !== "") {
+                    alert("Searching for: " + searchInput.value);
+                    // Example redirect:
+                    // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
+                } else {
+                    alert("Please type something to search!");
+                }
+            });
+
+            // Mic Button (Speech Recognition)
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.lang = "en-US";
+
+                micBtn.addEventListener("click", function () {
+                    recognition.start();
+                });
+
+                recognition.onresult = function (event) {
+                    searchInput.value = event.results[0][0].transcript;
+                };
+
+                recognition.onerror = function () {
+                    alert("Voice recognition error. Please try again.");
+                };
+            } else {
+                micBtn.addEventListener("click", function () {
+                    alert("Speech recognition not supported in this browser.");
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

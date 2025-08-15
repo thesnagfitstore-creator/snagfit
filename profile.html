@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAGFIT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER SECTION ===== -->
+    <header id="header" class="shadow-sm bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
+                <!-- Hamburger for mobile -->
+                <button class="btn btn-light me-3 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sideMenu" aria-controls="sideMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <ul class="navbar-nav flex-row d-none d-lg-flex">
+                    <li class="nav-item mx-2 fw-bold"><a href="index.html" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item mx-2 fw-bold"><a href="shop.html" class="nav-link text-white">Shop</a></li>
+                    <li class="nav-item mx-2 fw-bold"><a href="blog.html" class="nav-link text-white">Blog</a></li>
+                    <li class="nav-item mx-2 fw-bold position-relative">
+                        <a href="arrivals.html" class="nav-link text-danger">New Arrivals</a>
+                        <span class="position-absolute bottom-0 start-50 translate-middle-x"
+                            style="height:2px;width:30px;background:red;"></span>
+                    </li>
+                    <li class="nav-item mx-2 fw-bold"><a href="contact.html" class="nav-link text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Logo -->
+                <a class="navbar-brand mx-auto d-none d-lg-block" href="#">
+                    <img src="./logo.png" alt="SNAGFIT Logo" height="40">
+                </a>
+
+                <!-- Search & Icons -->
+                <div class="d-flex align-items-center ms-auto">
+                    <div class="input-group me-3 position-relative">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control"
+                                placeholder="What am I looking for?">
+                            <span class="input-group-text" id="micBtn"><i class="fas fa-microphone"></i></span>
+                            <span class="input-group-text" id="searchBtn"><i class="fas fa-search"></i></span>
+                        </div>
+
+                    </div>
+                    <a href="contact.html" class="btn btn-link text-white me-2"><i
+                            class="fas fa-map-marker-alt"></i></a>
+                    <a href="profile.html" class="btn btn-link text-white me-2"><i class="fas fa-user"></i></a>
+                    <a href="wishlist.html" class="btn btn-link text-white me-2"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="btn btn-link text-white"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" aria-labelledby="sideMenuLabel">
+        <div class="offcanvas-header">
+            <h5 id="sideMenuLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="arrivals.html" class="nav-link">New Arrivals</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Account Dashboard -->
+    <section class="account-dashboard py-5">
+        <div class="container">
+            <h2 class="mb-4 text-danger fw-bold">My Account</h2>
+
+            <div class="row">
+                <!-- Sidebar Menu -->
+                <div class="col-md-3 mb-4">
+                    <div class="list-group account-menu">
+                        <a href="#profile" class="list-group-item list-group-item-action active"><i
+                                class="fas fa-user me-2"></i> Profile</a>
+                        <a href="#orders" class="list-group-item list-group-item-action"><i
+                                class="fas fa-shopping-bag me-2"></i> Orders</a>
+                        <a href="#history" class="list-group-item list-group-item-action"><i
+                                class="fas fa-history me-2"></i> Order History</a>
+                        <a href="#wishlist" class="list-group-item list-group-item-action"><i
+                                class="fas fa-heart me-2"></i> Wishlist</a>
+                        <a href="#addresses" class="list-group-item list-group-item-action"><i
+                                class="fas fa-map-marker-alt me-2"></i> Addresses</a>
+                        <a href="logout.html" class="list-group-item list-group-item-action text-danger"><i
+                                class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="col-md-9">
+                    <!-- Profile -->
+                    <div id="profile" class="account-section mb-5">
+                        <h4 class="text-dark fw-bold mb-3">Profile Information</h4>
+                        <div class="p-3 bg-white shadow-sm rounded">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Email:</strong> john@example.com</p>
+                            <p><strong>Phone:</strong> +91 9876543210</p>
+                        </div>
+                    </div>
+
+                    <!-- Orders -->
+                    <div id="orders" class="account-section mb-5">
+                        <h4 class="text-dark fw-bold mb-3">Current Orders</h4>
+                        <div class="p-3 bg-white shadow-sm rounded">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/tshirt.jpg" alt="Order Item" class="me-3 rounded" width="70">
+                                <div>
+                                    <p class="mb-1"><strong>Red Cotton T-Shirt</strong></p>
+                                    <small>Status: <span class="text-success">Shipped</span></small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="images/hoodie.jpg" alt="Order Item" class="me-3 rounded" width="70">
+                                <div>
+                                    <p class="mb-1"><strong>Black Hoodie</strong></p>
+                                    <small>Status: <span class="text-warning">Processing</span></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- History -->
+                    <div id="history" class="account-section mb-5">
+                        <h4 class="text-dark fw-bold mb-3">Order History</h4>
+                        <div class="p-3 bg-white shadow-sm rounded">
+                            <p><strong>1.</strong> Blue Denim Jacket — Delivered on 10 Aug 2025</p>
+                            <p><strong>2.</strong> White Sneakers — Delivered on 02 Aug 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <div id="wishlist" class="account-section mb-5">
+                        <h4 class="text-dark fw-bold mb-3">Wishlist</h4>
+                        <div class="p-3 bg-white shadow-sm rounded">
+                            <p>No items in your wishlist.</p>
+                        </div>
+                    </div>
+
+                    <!-- Addresses -->
+                    <div id="addresses" class="account-section mb-5">
+                        <h4 class="text-dark fw-bold mb-3">Saved Addresses</h4>
+                        <div class="p-3 bg-white shadow-sm rounded">
+                            <p>123 Main Street, Delhi, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Column 1: Contact Info -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h3 class="logo">SNAGFIT</h3>
+                    <h5>Contact</h5>
+                    <p><strong>Address:</strong> 123 Street Name, City, Country</p>
+                    <p><strong>Phone:</strong> +91 9876543210</p>
+                    <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: About -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>About</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: My Account -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>My Account</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Payment -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5>Payment Gateways</h5>
+                    <img src="assets/payments.png" alt="Payment Methods" class="img-fluid mt-2">
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom text-center mt-4">
+                <p>© 2025 THE SNAGFIT STORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.querySelector("#searchInput");
+            const micBtn = document.querySelector("#micBtn");
+            const searchBtn = document.querySelector("#searchBtn");
+
+            // Search Button Action
+            searchBtn.addEventListener("click", function () {
+                if (searchInput.value.trim() !== "") {
+                    alert("Searching for: " + searchInput.value);
+                    // Example redirect:
+                    // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
+                } else {
+                    alert("Please type something to search!");
+                }
+            });
+
+            // Mic Button (Speech Recognition)
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.lang = "en-US";
+
+                micBtn.addEventListener("click", function () {
+                    recognition.start();
+                });
+
+                recognition.onresult = function (event) {
+                    searchInput.value = event.results[0][0].transcript;
+                };
+
+                recognition.onerror = function () {
+                    alert("Voice recognition error. Please try again.");
+                };
+            } else {
+                micBtn.addEventListener("click", function () {
+                    alert("Speech recognition not supported in this browser.");
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
