@@ -69,6 +69,7 @@
         </nav>
     </header>
     <!-- ===== END HEADER SECTION ===== -->
+
     <!-- Offcanvas Mobile Menu -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" aria-labelledby="sideMenuLabel">
         <div class="offcanvas-header">
@@ -172,7 +173,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- ===== FOOTER ===== -->
     <footer class="pt-5">
@@ -285,6 +285,33 @@
                     alert("Speech recognition not supported in this browser.");
                 });
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.account-menu .list-group-item');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    const href = link.getAttribute('href');
+
+                    // Only handle in-page anchor links (start with '#')
+                    if (!href || !href.startsWith('#')) return;
+
+                    e.preventDefault();
+
+                    const target = document.querySelector(href);
+                    if (!target) return;
+
+                    // Smooth scroll to the target section
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Optionally, update active sidebar link styling
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
         });
     </script>
 </body>

@@ -1591,48 +1591,144 @@ footer .row>div:nth-child(4) {
     }
 }
 
-/* Account Dashboard */
+/* Dashboard background */
 .account-dashboard {
-    background-color: #f4f4f4;
+    background-color: var(--light-gray);
+    min-height: 80vh;
+    padding-bottom: 3rem;
+    font-family: 'Celandine', cursive, serif;
 }
 
+/* Sidebar menu */
 .account-menu .list-group-item {
     border: none;
-    font-weight: 500;
-    color: #333;
-    transition: 0.3s ease;
+    font-weight: 600;
+    color: var(--deep-wine);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
 }
 
-.account-menu .list-group-item:hover {
-    background-color: #f8f8f8;
-    color: #d60000;
+/* Sidebar icons spacing */
+.account-menu .list-group-item i {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    color: var(--red);
+    transition: color 0.3s ease;
 }
 
+/* Sidebar active style - animated background slide */
 .account-menu .list-group-item.active {
-    background-color: #d60000;
-    border-color: #d60000;
-    color: #fff;
+    color: var(--cream);
+    background-color: var(--red);
+    box-shadow: 0 4px 20px rgba(255, 49, 49, 0.4);
+    font-weight: 700;
 }
 
+/* Hover effect for sidebar */
+.account-menu .list-group-item:not(.active):hover {
+    color: var(--red);
+    background-color: #ffe6e6;
+    font-weight: 600;
+}
+
+/* Content section heading */
 .account-section h4 {
-    border-left: 4px solid #d60000;
-    padding-left: 10px;
+    border-left: 6px solid var(--red);
+    padding-left: 14px;
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: var(--dark-red);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    user-select: none;
+    text-transform: uppercase;
 }
 
+/* Content boxes */
 .account-section .bg-white {
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 20px 25px;
+    transition: box-shadow 0.3s ease;
 }
 
+/* Boxes hover lift effect */
+.account-section .bg-white:hover {
+    box-shadow: 0 14px 34px rgba(255, 49, 49, 0.2);
+}
+
+/* Images in order history and orders */
 .account-section img {
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 1.5px solid var(--medium-gray);
+    transition: transform 0.3s ease;
 }
 
+.account-section img:hover {
+    transform: scale(1.05);
+}
+
+/* Flex wrap for smaller screens */
 @media (max-width: 768px) {
     .account-menu {
-        flex-direction: row;
+        display: flex !important;
+        flex-wrap: nowrap;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+
+    .account-menu .list-group-item {
+        flex: 0 0 auto;
+        border-radius: 12px;
+    }
+
+    /* Hide vertical scroll bar */
+    .account-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Smaller font sizes on mobile */
+    .account-section h4 {
+        font-size: 1.3rem;
     }
 }
+
+/* Animation for content section fade-in */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.account-section {
+    animation: fadeInSlideUp 0.5s ease forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+/* Utility to make active section visible */
+.account-section.active {
+    opacity: 1 !important;
+    animation-play-state: running !important;
+}
+
 
 /* Wishlist Page */
 .wishlist-section {
