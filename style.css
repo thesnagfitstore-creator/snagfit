@@ -77,49 +77,109 @@ h6 {
     color: var(--red);
 }
 
-/* Logo */
-.navbar-brand {
-    font-family: 'TrueTypewriter', monospace;
-    color: var(--cream) !important;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+/* Header and navbar background */
+#header {
+    background: #0D0D0D;
+    box-shadow: 0 2px 8px rgba(116, 28, 28, 0.25);
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--deep-wine) !important;
-    color: white;
+/* Brand logo shadow */
+.navbar-brand img {
+    filter: drop-shadow(0 2px 18px rgba(116, 28, 28, 0.5));
 }
 
-#header .nav-link.active {
-    color: red !important;
+/* Hamburger button styles */
+.navbar-toggler {
+    background-color: #FF3131;
+    border-radius: 50%;
+    box-shadow: 0 2px 24px rgba(116, 28, 28, 0.25);
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#header .nav-item {
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
+.navbar-toggler i {
+    color: #fff;
+    font-size: 1.25rem;
 }
 
-#header input.form-control {
-    padding-right: 70px;
-    /* for icons inside search bar */
+.navbar-brand img {
+    width: 50px;
+    /* Adjust this value as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    filter: drop-shadow(0 2px 18px rgba(116, 28, 28, 0.5));
 }
 
-#header .position-absolute i {
-    cursor: pointer;
+
+/* Hide hamburger on desktop */
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
+    }
 }
 
-/* Cart Icon */
-.nav-link i {
-    font-size: 1.2rem;
+/* Nav links base styling */
+.nav-link {
+    color: #fff;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
 }
 
-/* ===== OFFCANVAS MENU STYLING ===== */
+/* Hover effect */
+.nav-link:hover {
+    color: #FF3131 !important;
+    text-shadow: 0 2px 10px rgba(255, 49, 49, 0.38);
+}
+
+/* Active or current page underline */
+.nav-link.active,
+.nav-link[aria-current="page"] {
+    border-bottom: 2.5px solid #FF3131;
+    color: #FF3131 !important;
+}
+
+/* "New Arrivals" special button */
+.nav-item.position-relative .nav-link {
+    background: #FF3131;
+    border-radius: 20px;
+    padding: 0.25rem 1rem;
+    font-weight: 900;
+    color: #fff !important;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-item.position-relative .nav-link:hover,
+.nav-item.position-relative .nav-link:focus {
+    background: #741C1C;
+    box-shadow: 0 3px 12px rgba(116, 28, 28, 0.3);
+    color: #fff !important;
+}
+
+/* Icon buttons for profile, wishlist, etc. */
+.btn-link {
+    color: #fff !important;
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: #FF3131 !important;
+}
+
+
+/* Offcanvas panel width and background */
 .offcanvas {
     width: 280px;
-    /* Not full screen */
     background-color: #1e1e1e;
-    /* Dark theme */
+    /* Dark but slightly lighter than navbar */
     color: #fff;
     transition: transform 0.4s ease-in-out;
 }
@@ -133,222 +193,443 @@ h6 {
 .offcanvas-header h5 {
     font-weight: bold;
     color: #fff;
+    font-family: inherit;
+    font-size: 1.4rem;
 }
 
-/* Menu links */
+/* Offcanvas navigation links */
 .offcanvas-body .nav-link {
     color: #ccc;
     padding: 0.6rem 1rem;
     border-radius: 8px;
     transition: background 0.3s, color 0.3s;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 1.1rem;
 }
 
-.offcanvas-body .nav-link:hover {
+/* Hover and focus effects */
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link:focus {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+    text-decoration: none;
+    outline: none;
 }
 
-/* Active link effect */
-.offcanvas-body .nav-link.active,
-.offcanvas-body .nav-link:focus {
+/* Active link style */
+.offcanvas-body .nav-link.active {
     background-color: #ff4b4b;
     color: #fff;
 }
 
-/* Smooth close button */
+/* Close button styling */
 .offcanvas .btn-close {
     filter: invert(1);
     opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
-/* Animation effect on opening */
+.offcanvas .btn-close:hover,
+.offcanvas .btn-close:focus {
+    opacity: 1;
+}
+
+/* Shadow on offcanvas when shown */
 .offcanvas.show {
-    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
 }
 
-
+/* Her0 section css */
 #hero {
     background-color: #fff8f4;
     padding: 60px 0;
+    font-family: inherit;
 }
 
+/* Animate heading fade-in and slide from left */
 #hero h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     line-height: 1.2;
+    font-weight: 700;
+    color: #0d0d0d;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeSlideIn 1s forwards ease-out;
 }
 
-#hero p {
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animate subheading fade in with delay */
+#hero p.lead {
     font-size: 1.1rem;
     color: #6c757d;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-in;
+    animation-delay: 0.7s;
 }
 
-#hero .btn-danger {
-    background-color: #ff3131;
-    border: none;
+/* Buttons with subtle scaling on hover */
+#hero .btn-danger,
+#hero .btn-outline-danger {
+    border-radius: 40px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 #hero .btn-danger:hover {
     background-color: #e02a2a;
-}
-
-#hero .btn-outline-danger {
-    border: 2px solid #ff3131;
-    color: #ff3131;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 49, 49, 0.3);
 }
 
 #hero .btn-outline-danger:hover {
     background-color: #ff3131;
     color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 49, 49, 0.3);
+    text-decoration: none;
 }
 
+/* Animate feature stats fade in with a slight upward slide */
+#hero .d-flex.text-muted.small>div {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideUp 1.2s forwards ease;
+    animation-delay: 1.2s;
+}
 
-/* ===== FEATURE SECTION ===== */
+#hero .d-flex.text-muted.small>div:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+#hero .d-flex.text-muted.small>div:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image fade with scale effect on load */
+#hero .img-fluid.rounded {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: imageFadeScale 1.5s forwards ease;
+    animation-delay: 1s;
+}
+
+@keyframes imageFadeScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Feature Section Background */
 #feature {
     background-color: var(--cream);
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
+/* Feature Box Styling */
 .feature-box {
-    padding: 20px;
-    border: 2px solid black;
+    padding: 25px 20px;
+    border: 2px solid var(--black);
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    background: white;
+    cursor: default;
 }
 
 .feature-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(255, 49, 49, 0.15);
+    border-color: var(--red);
 }
 
+/* Feature Image */
 .feature-box img {
     max-width: 120px;
+    transition: transform 0.3s ease;
 }
 
+.feature-box:hover img {
+    transform: scale(1.05);
+}
+
+/* Feature Titles */
 .feature-box h6 {
     color: var(--cream);
     background-color: var(--red);
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
     line-height: 1.4;
     display: inline-block;
-    margin-top: 10px;
-    font-weight: 600;
+    margin-top: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(255, 49, 49, 0.4);
+    transition: background-color 0.3s ease;
 }
 
+.feature-box:hover h6 {
+    background-color: var(--dark-red);
+    box-shadow: 0 6px 18px rgba(116, 28, 28, 0.6);
+}
 
-/* ===== FEATURED PRODUCTS ===== */
+/* Section title styling */
 #product1 h2 {
-    font-family: var(--main-font);
-    font-weight: bold;
+    font-family: 'Celandine', cursive, serif;
+    /* or your main font */
+    font-weight: 900;
+    font-size: 2.8rem;
     color: var(--deep-wine);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    user-select: none;
 }
 
 #product1 p {
-    font-family: var(--supporting-font);
+    font-family: 'AvallonAlt', serif, Georgia, serif;
     color: #555;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 3rem;
 }
 
+/* Product card container */
 .product-card {
     position: relative;
     background-color: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 18px;
+    padding: 20px 15px 60px 15px;
+    box-shadow: 0 6px 18px rgba(255, 49, 49, 0.16);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
 }
 
+/* Elevate on hover with smoother animation */
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 36px rgba(255, 49, 49, 0.28);
 }
 
+/* Rounded product images with subtle zoom on hover */
 .product-card img {
-    border-radius: 12px;
+    width: 100%;
+    border-radius: 18px;
+    transition: transform 0.4s ease;
 }
 
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Description wrapper */
 .product-card .des {
-    padding-top: 15px;
+    padding-top: 18px;
+    font-family: 'GeorgiaPro', Georgia, serif;
 }
 
+/* Brand name */
 .product-card span {
-    color: #606063;
-    font-size: 0.85rem;
-    display: block;
-}
-
-.product-card h5 {
-    font-size: 1rem;
+    color: var(--black);
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-top: 5px;
+    letter-spacing: 0.05em;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 6px;
 }
 
-.product-card .star i {
-    font-size: 0.8rem;
-    color: gold;
-}
-
-.product-card h4 {
+/* Product name */
+.product-card h5 {
     font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--red);
-    margin-top: 8px;
+    font-weight: 700;
+    color: var(--dark-red);
+    margin-top: 0;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    text-transform: capitalize;
+    letter-spacing: 0.03em;
 }
 
+/* Star rating coloring */
+.product-card .star i {
+    font-size: 0.9rem;
+    color: #FFC107;
+    /* gold */
+    margin-right: 2px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Price styling */
+.product-card h4 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--red);
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+}
+
+/* Shopping cart icon container */
 .product-card .cart {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 18px;
+    right: 18px;
     background: var(--cream);
     color: var(--red);
-    padding: 8px;
+    padding: 12px;
     border-radius: 50%;
-    border: 1px solid var(--red);
-    transition: background 0.3s ease, color 0.3s ease;
+    border: 2px solid var(--red);
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(255, 49, 49, 0.2);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Hover effect on cart button with pop */
 .product-card .cart:hover {
     background: var(--red);
     color: var(--cream);
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(255, 49, 49, 0.4);
 }
 
-/* ===== BANNER SECTION ===== */
+/* Accessibility focus styles for cart */
+.product-card .cart:focus-visible {
+    outline: 3px solid var(--dark-red);
+    outline-offset: 2px;
+}
+
+/* Responsive tweaks for smaller devices */
+@media (max-width: 768px) {
+    #product1 h2 {
+        font-size: 2.2rem;
+    }
+
+    #product1 p {
+        font-size: 1rem;
+    }
+
+    .product-card h5 {
+        font-size: 1rem;
+    }
+
+    .product-card h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+:root {
+    --black: #0d0d0d;
+    --red: #ff3131;
+    --dark-red: #741c1c;
+    --deep-wine: #441515;
+    --cream: #f7f3e3;
+}
+
 #banner {
     background: url("banner/banner.png") no-repeat center center/cover;
     padding: 100px 0;
     position: relative;
+    color: var(--cream);
+    font-family: 'Celandine', cursive, serif;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
+/* Subheading */
 #banner h4 {
-    font-size: 20px;
-    letter-spacing: 2px;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #3c3b35;
-}
-
-#banner h2 {
-    font-size: 40px;
+    color: var(--cream);
     font-weight: 700;
-    margin-top: 10px;
+    margin-bottom: 0.5rem;
 }
 
+/* Main heading */
+#banner h2 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-top: 0;
+    line-height: 1.1;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Highlighted text */
 #banner h2 span {
-    color: #ff3131;
+    color: var(--red);
+    text-shadow: none;
 }
 
+/* Button styling */
 #banner button {
     border-radius: 30px;
-    padding: 10px 25px;
-    font-weight: bold;
-    background-color: #ff3131;
+    padding: 12px 30px;
+    font-weight: 800;
+    background-color: var(--red);
     border: none;
-    transition: 0.3s ease;
+    color: var(--cream);
+    font-size: 1.1rem;
+    box-shadow: 0 8px 18px rgba(255, 49, 49, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    user-select: none;
 }
 
+/* Button hover effect */
 #banner button:hover {
-    background-color: #741c1c;
-    color: #fff;
+    background-color: var(--dark-red);
+    color: var(--cream);
+    box-shadow: 0 12px 24px rgba(116, 28, 28, 0.5);
+    transform: scale(1.05);
 }
 
+/* Responsive typography */
+@media (max-width: 768px) {
+    #banner h4 {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    #banner h2 {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+
+    #banner button {
+        font-size: 1rem;
+        padding: 10px 24px;
+    }
+}
 
 /* ===== SMALL BANNER SECTION ===== */
 #sm-banner .banner-box {
@@ -481,47 +762,65 @@ h6 {
     background-color: #741c1c;
 }
 
-/* ===== FOOTER ===== */
+/* Footer styling */
 footer {
-    /* light footer */
-    color: #0d0d0d;
-    /* dark text */
+    color: var(--black);
+    background-color: var(--cream);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: 'TrueTypewriter', serif;
 }
 
 footer .logo {
-    font-family: "True Typewriter", serif;
-    font-size: 26px;
+    font-family: 'TrueTypewriter', serif;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: #ff3131;
-    /* brand red */
+    margin-bottom: 20px;
+    color: var(--red);
+    user-select: none;
 }
 
 footer h5 {
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #0d0d0d;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 footer p {
     font-size: 14px;
-    margin-bottom: 5px;
-    color: #441515;
-    /* subtle brown-red */
+    margin-bottom: 8px;
+    color: var(--deep-wine);
+    line-height: 1.5;
 }
 
-footer .social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 16px;
-    color: #0d0d0d;
+footer .contact-links a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
-footer .social-icons a:hover {
-    color: #ff3131;
+footer .contact-links a:hover {
+    color: var(--red);
 }
 
+/* Social Icons */
+footer .social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 20px;
+    color: var(--black);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--red);
+    transform: scale(1.15);
+}
+
+/* Footer links */
 footer .footer-links {
     list-style: none;
     padding: 0;
@@ -529,51 +828,93 @@ footer .footer-links {
 }
 
 footer .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 footer .footer-links a {
     text-decoration: none;
-    color: #0d0d0d;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 footer .footer-links a:hover {
-    color: #ff3131;
+    color: var(--red);
+    text-decoration: underline;
 }
 
+/* Payment Gateway Image */
+footer .col-lg-3 img {
+    max-width: 180px;
+    margin-top: 12px;
+    filter: drop-shadow(0 2px 2px rgba(255, 49, 49, 0.25));
+}
+
+/* Footer bottom copyright */
 .footer-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding-top: 15px;
+    padding-top: 20px;
     font-size: 14px;
-    color: #741c1c;
+    color: var(--dark-red);
     text-align: center;
+    user-select: none;
 }
 
-.contact-links a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s;
+/* Responsive tweaks for footer */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .social-icons {
+        margin-top: 12px;
+    }
+
+    footer .footer-links li {
+        margin-bottom: 10px;
+    }
 }
 
-.contact-links a:hover {
-    color: #ff3131;
+/* Initial state: hidden and slightly shifted down */
+footer .row>div {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.7s;
 }
 
-/* Optional: Style for social icons */
-.social-icons a {
-    color: #333;
-    /* Neutral color */
-    font-size: 18px;
-    margin-right: 10px;
-    transition: color 0.3s;
+/* Staggered animation delays for each column */
+footer .row>div:nth-child(1) {
+    animation-name: fadeInUp;
+    animation-delay: 0.15s;
 }
 
-.social-icons a:hover {
-    color: #ff3131;
-    /* Hover effect */
+footer .row>div:nth-child(2) {
+    animation-name: fadeInUp;
+    animation-delay: 0.35s;
 }
+
+footer .row>div:nth-child(3) {
+    animation-name: fadeInUp;
+    animation-delay: 0.55s;
+}
+
+footer .row>div:nth-child(4) {
+    animation-name: fadeInUp;
+    animation-delay: 0.75s;
+}
+
+/* Keyframes for fade-in and upward slide */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* ===== PAGE HEADER ===== */
 #page-header {
