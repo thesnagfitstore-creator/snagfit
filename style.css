@@ -713,55 +713,6 @@ h6 {
     background: url("banner/b4.png") no-repeat center center/cover;
 }
 
-/* ===== NEWSLETTER SECTION ===== */
-#newsletter {
-    background-color: #0d0d0d;
-    color: #f7f3e3;
-    border-radius: 12px;
-}
-
-#newsletter .nwstext h4 {
-    font-size: 22px;
-    font-weight: 700;
-    color: white;
-}
-
-#newsletter .nwstext p {
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-#newsletter .nwstext span {
-    color: #ff3131;
-    font-weight: 600;
-}
-
-#newsletter .newsletter-form {
-    gap: 10px;
-}
-
-#newsletter .newsletter-form input {
-    border-radius: 25px;
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    flex: 1;
-}
-
-#newsletter .btn-signup {
-    background-color: #ff3131;
-    color: #fff;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-weight: 600;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-#newsletter .btn-signup:hover {
-    background-color: #741c1c;
-}
-
 /* Footer styling */
 footer {
     color: var(--black);
@@ -1208,58 +1159,301 @@ footer .row>div:nth-child(4) {
     color: #fff;
 }
 
+/* Arrival page */
+
+.new-arrivals-header {
+    background-color: var(--dark-red);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 40vh;
+    padding: 0 1rem;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Celandine', cursive, serif;
+}
+
+.new-arrivals-header .header-content h2 {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.new-arrivals-header .header-content p {
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--cream);
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.new-arrivals-header .divider {
+    margin-top: 2rem;
+    width: 60px;
+    height: 4px;
+    background-color: var(--red);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .new-arrivals-header .header-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .new-arrivals-header .header-content p {
+        font-size: 1rem;
+    }
+}
+
 /* Just Landed badges */
 #just-landed .badge {
-    font-size: 0.8rem;
-    padding: 6px 10px;
-    border-radius: 5px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease;
+}
+
+#just-landed .badge.bg-danger {
+    background-color: var(--red);
+    color: var(--cream);
+}
+
+#just-landed .badge.bg-warning {
+    background-color: #ffbb33;
+    color: var(--black);
+}
+
+#just-landed .badge.bg-success {
+    background-color: #28a745;
+    color: var(--cream);
+}
+
+#just-landed .badge.bg-primary {
+    background-color: #007bff;
+    color: var(--cream);
+}
+
+/* Card hover effect */
+#just-landed .card {
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    will-change: transform, box-shadow;
 }
 
 #just-landed .card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s ease;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 49, 49, 0.25);
 }
 
-/* Size Buttons */
+/* Size buttons container */
 .size-options {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    margin: 12px 0;
 }
 
+/* Individual size buttons */
 .size-btn {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    font-size: 0.85rem;
-    background-color: #fff;
-    color: #0d0d0d;
+    border: 1.8px solid #ccc;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    background-color: var(--cream);
+    color: var(--black);
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    min-width: 38px;
+    text-align: center;
 }
 
-.size-btn:hover {
-    background-color: #ff3131;
-    color: #fff;
+.size-btn:hover:not(.active) {
+    background-color: var(--red);
+    color: var(--cream);
+    border-color: var(--red);
 }
 
 .size-btn.active {
-    background-color: #ff3131;
-    color: #fff;
-    border-color: #ff3131;
+    background-color: var(--red);
+    color: var(--cream);
+    border-color: var(--red);
+    box-shadow: 0 4px 12px rgba(255, 49, 49, 0.35);
 }
 
+/* Quantity input styles */
+#just-landed input[type="number"] {
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    width: 80px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    margin: 0 auto 8px;
+    display: block;
+}
 
-/* Categories */
+#just-landed input[type="number"]:focus {
+    border-color: var(--red);
+    outline: none;
+    box-shadow: 0 0 8px var(--red);
+}
+
+/* Add to Cart button */
+#just-landed .btn-outline-danger {
+    border-radius: 25px;
+    font-weight: 700;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(255, 49, 49, 0.15);
+}
+
+#just-landed .btn-outline-danger:hover,
+#just-landed .btn-outline-danger:focus {
+    background-color: var(--red);
+    color: var(--cream);
+    box-shadow: 0 8px 20px rgba(255, 49, 49, 0.5);
+    outline: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    #just-landed .size-options {
+        gap: 6px;
+    }
+
+    #just-landed .size-btn {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+        min-width: 32px;
+    }
+
+    #just-landed input[type="number"] {
+        width: 60px;
+        font-size: 0.9rem;
+    }
+}
+
+:root {
+    --black: #0d0d0d;
+    --red: #ff3131;
+    --dark-red: #741c1c;
+    --deep-wine: #441515;
+    --cream: #f7f3e3;
+}
+
+/* Category images with consistent height and cover */
 #categories .card img {
     height: 220px;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.4s ease;
+    will-change: transform;
 }
 
+/* Lift card and zoom image on hover */
 #categories .card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s ease;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(255, 49, 49, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#categories .card:hover img {
+    transform: scale(1.07);
+}
+
+/* Card body styling */
+#categories .card-body {
+    background-color: var(--cream);
+    padding: 1.2rem 1rem;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+/* Card title */
+#categories .card-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--dark-red);
+    margin-bottom: 0.75rem;
+    font-family: 'Celandine', cursive, serif;
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
+/* Explore button */
+#categories .btn-outline-danger {
+    border-color: var(--red);
+    color: var(--red);
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 0.4rem 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(255, 49, 49, 0.15);
+}
+
+#categories .btn-outline-danger:hover,
+#categories .btn-outline-danger:focus {
+    background-color: var(--red);
+    color: var(--cream);
+    box-shadow: 0 12px 30px rgba(255, 49, 49, 0.45);
+    outline: none;
+}
+
+/* Section heading and description */
+#categories h2 {
+    font-family: 'Celandine', cursive, serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: var(--dark-red);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+    user-select: none;
+}
+
+#categories p.text-muted {
+    color: #6c757d;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+    user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #categories .card img {
+        height: 180px;
+    }
+
+    #categories h2 {
+        font-size: 2rem;
+    }
+
+    #categories p.text-muted {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
 
 .auth-card {
     background: #fff;
