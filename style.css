@@ -1856,35 +1856,190 @@ footer .row>div:nth-child(4) {
     }
 }
 
-/* Cart Page */
+/* Cart section background and font */
 .cart-section {
     background-color: #f4f4f4;
+    font-family: 'Celandine', cursive, serif;
+    min-height: 80vh;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    color: var(--dark-red);
 }
 
+/* Cart table styling */
+.cart-table {
+    background-color: var(--cream);
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.cart-table:hover {
+    box-shadow: 0 14px 40px rgba(255, 49, 49, 0.3);
+}
+
+.cart-table thead th {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+    user-select: none;
+}
+
+.cart-table tbody tr {
+    transition: background-color 0.25s ease;
+    cursor: default;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #fff0f0;
+}
+
+/* Cart images */
 .cart-img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.qty-input {
     width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 49, 49, 0.15);
 }
 
-.cart-summary {
-    border-radius: 10px;
-    background-color: #fff;
+/* Quantity inputs */
+.qty-input {
+    width: 80px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1.8px solid var(--red);
+    padding: 0.3rem 0.6rem;
+    text-align: center;
+    transition: border-color 0.3s ease;
 }
 
-.cart-table td,
-.cart-table th {
-    vertical-align: middle;
+.qty-input:focus {
+    border-color: var(--dark-red);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 49, 49, 0.3);
 }
 
+/* Remove button */
 .cart-table .btn-outline-danger {
     border-radius: 50%;
+    border: 2px solid var(--red);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
 }
+
+.cart-table .btn-outline-danger:hover,
+.cart-table .btn-outline-danger:focus {
+    background-color: var(--red);
+    color: var(--cream);
+    outline: none;
+    box-shadow: 0 6px 18px rgba(255, 49, 49, 0.3);
+    border-color: var(--red);
+}
+
+/* Order summary card */
+.cart-summary {
+    border-radius: 14px;
+    background-color: var(--cream);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+    padding: 2rem 2.5rem;
+    color: var(--dark-red);
+    font-weight: 700;
+    user-select: none;
+}
+
+.cart-summary h5 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+/* Summary details row */
+.cart-summary div>span {
+    font-size: 1.1rem;
+}
+
+.cart-summary hr {
+    border-top: 2px solid var(--red);
+    margin: 1.5rem 0;
+}
+
+.cart-summary .fw-bold span {
+    font-size: 1.4rem;
+    color: var(--dark-red);
+}
+
+/* Proceed to checkout button */
+.cart-summary .btn-danger {
+    background-color: var(--red);
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 1.15rem;
+    padding: 0.7rem 0;
+    box-shadow: 0 8px 24px rgba(255, 49, 49, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.cart-summary .btn-danger:hover,
+.cart-summary .btn-danger:focus {
+    background-color: var(--dark-red);
+    box-shadow: 0 12px 38px rgba(116, 28, 28, 0.8);
+    outline: none;
+    color: var(--cream);
+}
+
+/* Continue shopping button */
+.btn-outline-dark {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus {
+    background-color: var(--red);
+    color: var(--cream);
+    border-color: var(--red);
+    outline: none;
+    box-shadow: 0 8px 20px rgba(255, 49, 49, 0.3);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+    .cart-summary {
+        margin-top: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-section h2 {
+        font-size: 2rem;
+    }
+
+    .cart-table thead th {
+        font-size: 1rem;
+    }
+
+    .cart-summary h5 {
+        font-size: 1.4rem;
+    }
+}
+
 
 @media (max-width: 768px) {
     header .navbar {
