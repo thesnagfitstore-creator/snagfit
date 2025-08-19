@@ -1454,42 +1454,141 @@ footer .row>div:nth-child(4) {
     }
 }
 
+/* contact page */
 
+:root {
+    --black: #0d0d0d;
+    --red: #ff3131;
+    --dark-red: #741c1c;
+    --deep-wine: #441515;
+    --cream: #f7f3e3;
+}
+
+/* Auth card container */
 .auth-card {
-    background: #fff;
+    background: white;
     border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     max-width: 400px;
     margin: auto;
+    font-family: 'Celandine', cursive, serif;
 }
 
-.btn-red {
-    background-color: #f44336;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(244, 67, 54, 0.3);
+/* Headings and text */
+.auth-card h3 {
+    color: var(--dark-red);
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    user-select: none;
 }
 
-.btn-red:hover {
-    background-color: #d32f2f;
-}
-
-.social-btn {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
+.auth-card p {
+    color: #666;
     font-weight: 500;
+    margin-bottom: 1.8rem;
+    user-select: none;
 }
 
-.newsletter-box {
-    border: 2px solid red;
+/* Input groups */
+.auth-card .input-group-text {
+    background: var(--cream);
+    border: 1.5px solid #ccc;
+    color: var(--dark-red);
+    font-size: 1.2rem;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+}
+
+.auth-card input.form-control {
+    border-radius: 0 8px 8px 0;
+    border: 1.5px solid #ccc;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.auth-card input.form-control:focus {
+    border-color: var(--red);
+    outline: none;
+    box-shadow: 0 0 8px var(--red);
+}
+
+/* Remember me and forgot password */
+.auth-card label {
+    cursor: pointer;
+    user-select: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.auth-card a.text-danger {
+    font-weight: 600;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.auth-card a.text-danger:hover {
+    color: var(--dark-red);
+    text-decoration: underline;
+}
+
+/* Sign in button styling */
+.btn-red {
+    background-color: var(--red);
+    color: var(--cream);
+    border-radius: 8px;
+    font-weight: 900;
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 14px rgba(255, 49, 49, 0.35);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+    background-color: var(--dark-red);
+    box-shadow: 0 8px 24px rgba(116, 28, 28, 0.5);
+    outline: none;
+    color: var(--cream);
+}
+
+/* Social login buttons */
+.social-btn {
+    border: 1.5px solid #ccc;
     border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    background-color: #fff;
-    margin-top: 3rem;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    background-color: var(--cream);
+    color: var(--dark-red);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn:hover,
+.social-btn:focus {
+    background-color: var(--red);
+    color: var(--cream);
+    border-color: var(--red);
+    box-shadow: 0 8px 20px rgba(255, 49, 49, 0.6);
+    outline: none;
+}
+
+/* Responsive form spacing */
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* Account Dashboard */
