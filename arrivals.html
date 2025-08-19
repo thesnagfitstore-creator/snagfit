@@ -414,6 +414,37 @@
             }
         });
     </script>
+
+    <!-- footer section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footerColumns = document.querySelectorAll("footer .row > div");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = "running";
+                        observer.unobserve(entry.target); // Animate once only
+                    }
+                });
+            }, observerOptions);
+
+            footerColumns.forEach((col, index) => {
+                col.style.opacity = 0;
+                col.style.transform = "translateY(20px)";
+                col.style.animation = `fadeInUp 0.7s ease-out ${0.15 + index * 0.2}s forwards`;
+                col.style.animationPlayState = "paused"; // Start paused
+                observer.observe(col);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
