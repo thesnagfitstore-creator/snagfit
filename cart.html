@@ -293,6 +293,86 @@
         });
     </script>
 
+    <!-- wishlist to cart jsa -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('snagfit-cart')) || [];
+            const tbody = document.querySelector('.cart-table tbody');
+            const orderSummarySubtotal = document.querySelector('.cart-summary div span:last-child');
+            const orderSummaryTotal = document.querySelector('.cart-summary div.fw-bold span:last-child');
+            const shippingCost = 100;
+
+            tbody.innerHTML = ''; // Clear existing cart rows
+
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const totalPrice = item.price * item.quantity;
+                subtotal += totalPrice;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="${item.imgSrc}" alt="${item.title}" class="cart-img me-3" style="width: 70px; border-radius: 6px;" />
+          <span>${item.title}</span>
+        </div>
+      </td>
+      <td>₹${item.price.toLocaleString()}</td>
+      <td>
+        <input type="number" min="1" value="${item.quantity}" class="form-control qty-input" style="max-width: 70px;">
+      </td>
+      <td>₹${totalPrice.toLocaleString()}</td>
+      <td>
+        <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></button>
+      </td>
+    `;
+
+                // Update quantity event
+                const qtyInput = tr.querySelector('.qty-input');
+                qtyInput.addEventListener('change', () => {
+                    const newQty = parseInt(qtyInput.value, 10);
+                    if (newQty < 1) {
+                        qtyInput.value = item.quantity;
+                        return;
+                    }
+                    item.quantity = newQty;
+                    localStorage.setItem('snagfit-cart', JSON.stringify(cart));
+                    updateCartUI();
+                });
+
+                // Remove item event
+                tr.querySelector('button').addEventListener('click', () => {
+                    const index = cart.findIndex(ci => ci.title === item.title);
+                    if (index > -1) {
+                        cart.splice(index, 1);
+                        localStorage.setItem('snagfit-cart', JSON.stringify(cart));
+                        updateCartUI();
+                    }
+                });
+
+                tbody.appendChild(tr);
+            });
+
+            function updateCartUI() {
+                // Recalculate subtotal
+                let newSubtotal = 0;
+                cart.forEach(ci => {
+                    newSubtotal += ci.price * ci.quantity;
+                });
+                orderSummarySubtotal.textContent = `₹${newSubtotal.toLocaleString()}`;
+                orderSummaryTotal.textContent = `₹${(newSubtotal + shippingCost).toLocaleString()}`;
+
+                // If cart is empty, you can show empty message and hide checkout button (optional)
+            }
+
+            // Initialize totals
+            orderSummarySubtotal.textContent = `₹${subtotal.toLocaleString()}`;
+            orderSummaryTotal.textContent = `₹${(subtotal + shippingCost).toLocaleString()}`;
+        });
+
+    </script>
+
     <!-- footer section -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {

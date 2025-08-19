@@ -154,7 +154,6 @@
         </div>
     </section>
 
-
     <!-- ===== FOOTER ===== -->
     <footer class="pt-5">
         <div class="container">
@@ -240,6 +239,7 @@
         });
 
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const searchInput = document.querySelector("#searchInput");
@@ -280,6 +280,61 @@
                 });
             }
         });
+    </script>
+
+    <!-- add to cart -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.wishlist-card .btn-danger').forEach(button => {
+                button.addEventListener('click', e => {
+                    const card = e.target.closest('.wishlist-card');
+                    if (!card) return;
+
+                    const title = card.querySelector('.card-title').textContent.trim();
+                    const priceText = card.querySelector('.card-text').textContent.trim();
+                    const price = parseInt(priceText.replace(/[^\d]/g, ''), 10) || 0; // Extract number only
+                    const imgSrc = card.querySelector('img').src;
+
+                    // Retrieve or initialize cart array
+                    let cart = JSON.parse(localStorage.getItem('snagfit-cart')) || [];
+
+                    // Check if item already in cart, update quantity if so
+                    const existingIndex = cart.findIndex(item => item.title === title);
+                    if (existingIndex > -1) {
+                        cart[existingIndex].quantity += 1;
+                    } else {
+                        cart.push({ title, price, imgSrc, quantity: 1 });
+                    }
+
+                    // Save cart to localStorage
+                    localStorage.setItem('snagfit-cart', JSON.stringify(cart));
+
+                    // Remove from wishlist UI (optional)
+                    card.remove();
+
+                    // Redirect to cart page
+                    window.location.href = 'cart.html';
+                });
+            });
+        });
+
+    </script>
+
+    <!-- remove button js -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all remove buttons inside wishlist cards
+            document.querySelectorAll('.wishlist-card .btn-outline-danger').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = e.target.closest('.wishlist-card');
+                    if (card) {
+                        card.remove(); // Remove the entire card from DOM
+                    }
+                });
+            });
+        });
+
     </script>
 
     <!-- footer section -->
