@@ -57,7 +57,7 @@ body {
     color: var(--dark-red);
     margin: 0;
     padding: 0;
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 /* Headings */
@@ -77,23 +77,38 @@ h6 {
     color: var(--red);
 }
 
-/* Header and navbar background */
-#header {
-    background: #0D0D0D;
-    box-shadow: 0 2px 8px rgba(116, 28, 28, 0.25);
+:root {
+    --brand-deep: #741c1c;
 }
 
-/* Brand logo shadow */
+/* Header background and shadow */
+#header {
+    background: #f7f3e3;
+    box-shadow: 0 3px 18px rgba(116, 28, 28, 0.10);
+    border-bottom: 1.5px solid #eee;
+    z-index: 40;
+}
+
+/* Logo styling */
+.navbar-brand {
+    color: #441515;
+    font-family: 'Celandine', cursive, serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
 .navbar-brand img {
-    filter: drop-shadow(0 2px 18px rgba(116, 28, 28, 0.5));
+    filter: drop-shadow(0 3px 16px rgba(116, 28, 28, 0.45));
+    height: 42px;
+    width: auto;
 }
 
 /* Hamburger button styles */
 .navbar-toggler {
-    background-color: #FF3131;
-    border-radius: 50%;
-    box-shadow: 0 2px 24px rgba(116, 28, 28, 0.25);
-    border: none;
+    background-color: #ff3131 !important;
+    box-shadow: 0 2px 24px rgba(116, 28, 28, .18);
     width: 44px;
     height: 44px;
     display: flex;
@@ -106,15 +121,6 @@ h6 {
     font-size: 1.25rem;
 }
 
-.navbar-brand img {
-    width: 50px;
-    /* Adjust this value as needed */
-    height: auto;
-    /* Maintain aspect ratio */
-    filter: drop-shadow(0 2px 18px rgba(116, 28, 28, 0.5));
-}
-
-
 /* Hide hamburger on desktop */
 @media (min-width: 992px) {
     .navbar-toggler {
@@ -122,123 +128,180 @@ h6 {
     }
 }
 
-/* Nav links base styling */
-.nav-link {
-    color: #fff;
+/* Center menu nav links (desktop only) */
+.navbar-nav .nav-link {
+    color: #741c1c;
     font-weight: 700;
-    font-family: inherit;
-    font-size: 1.1rem;
-    transition: color 0.2s ease;
+    font-size: 1.12rem;
+    padding: 0.5rem 1rem;
+    border-radius: 18px;
+    transition: color 0.2s, background 0.2s;
 }
 
-/* Hover effect */
-.nav-link:hover {
-    color: #FF3131 !important;
-    text-shadow: 0 2px 10px rgba(255, 49, 49, 0.38);
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+    background: #741c1c;
+    color: #fff !important;
 }
 
-/* Active or current page underline */
-.nav-link.active,
-.nav-link[aria-current="page"] {
-    border-bottom: 2.5px solid #FF3131;
-    color: #FF3131 !important;
+.navbar-nav .nav-link:hover {
+    color: #ff3131;
 }
 
-/* "New Arrivals" special button */
-.nav-item.position-relative .nav-link {
-    background: #FF3131;
-    border-radius: 20px;
-    padding: 0.25rem 1rem;
+.navbar-nav .nav-link.bg-danger {
     font-weight: 900;
     color: #fff !important;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: #ff3131 !important;
+    transition: background 0.3s;
 }
 
-.nav-item.position-relative .nav-link:hover,
-.nav-item.position-relative .nav-link:focus {
-    background: #741C1C;
-    box-shadow: 0 3px 12px rgba(116, 28, 28, 0.3);
-    color: #fff !important;
+.navbar-nav .nav-link.bg-danger:hover {
+    background: #741c1c !important;
 }
 
-/* Icon buttons for profile, wishlist, etc. */
-.btn-link {
-    color: #fff !important;
-    font-size: 1.25rem;
-    transition: color 0.2s ease;
-    font-family: inherit;
+/* Right icon buttons and cart badge */
+.navbar-icons .btn-link {
+    color: #441515;
+    font-size: 1.24rem;
+    transition: color 0.2s;
+    border-radius: 20px;
 }
 
-.btn-link:hover,
-.btn-link:focus {
-    color: #FF3131 !important;
+.navbar-icons .btn-link:hover,
+.navbar-icons .btn-link:focus {
+    color: #ff3131;
 }
 
-
-/* Offcanvas panel width and background */
-.offcanvas {
-    width: 280px;
-    background-color: #1e1e1e;
-    /* Dark but slightly lighter than navbar */
-    color: #fff;
-    transition: transform 0.4s ease-in-out;
+.navbar-icons .cart-count {
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.17em 0.5em;
+    box-shadow: 0 1px 8px rgba(255, 49, 49, 0.25);
 }
 
-/* Header inside offcanvas */
-.offcanvas-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.8rem;
-}
-
-.offcanvas-header h5 {
-    font-weight: bold;
-    color: #fff;
-    font-family: inherit;
-    font-size: 1.4rem;
-}
-
-/* Offcanvas navigation links */
-.offcanvas-body .nav-link {
-    color: #ccc;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    transition: background 0.3s, color 0.3s;
-    font-weight: 600;
-    font-family: inherit;
-    font-size: 1.1rem;
-}
-
-/* Hover and focus effects */
-.offcanvas-body .nav-link:hover,
-.offcanvas-body .nav-link:focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-decoration: none;
-    outline: none;
-}
-
-/* Active link style */
-.offcanvas-body .nav-link.active {
-    background-color: #ff4b4b;
-    color: #fff;
-}
-
-/* Close button styling */
-.offcanvas .btn-close {
-    filter: invert(1);
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.offcanvas .btn-close:hover,
-.offcanvas .btn-close:focus {
+/* Search box styling */
+#searchBar {
+    transition: box-shadow 0.22s, opacity 0.22s;
+    box-shadow: 0 4px 22px rgba(116, 28, 28, 0.13);
+    border-radius: 14px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: 2px solid #741c1c;
+    background: #fff;
+    color: #441515;
+    width: 220px;
     opacity: 1;
 }
 
-/* Shadow on offcanvas when shown */
-.offcanvas.show {
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+#searchBar.d-none {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    padding: 0;
+    margin-left: 0;
 }
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1px;
+        /* Adjust vertical alignment as needed */
+        z-index: 45;
+        /* Ensure it’s above other elements like hamburger */
+    }
+
+    /* Optional: To prevent navbar brand pushing other content */
+    .navbar .container-fluid {
+        position: relative;
+    }
+}
+
+
+.offcanvas {
+    background: #f7f3e3;
+    min-width: 300px;
+}
+
+.offcanvas-title {
+    color: #441515;
+    font-weight: 900;
+}
+
+.mobile-search .input-group-text {
+    background: #fff;
+    border: 2px solid #ff3131;
+    border-radius: 10px 0 0 10px;
+    color: #741c1c;
+    font-size: 1.2rem;
+}
+
+.mobile-search .form-control {
+    border: 2px solid #ff3131;
+    border-radius: 0 10px 10px 0;
+    font-size: 1rem;
+    padding: 0.7rem 0.85rem;
+    color: #441515;
+    background: #fff;
+}
+
+.nav-link {
+    color: #441515;
+    font-weight: 700;
+    font-size: 1.15rem;
+    background: none;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link.active,
+.nav-link:focus {
+    background: #441515;
+    color: #fff !important;
+}
+
+.nav-link.text-danger {
+    color: #ff3131 !important;
+}
+
+.nav-link:hover {
+    background: #f2dede;
+    color: #ff3131;
+}
+
+/* Icon links inside menu */
+.offcanvas-body .nav-link i {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 992px) {
+    .offcanvas {
+        display: none !important;
+    }
+}
+
+/* Hide search icon button on small screens */
+@media (max-width: 991.98px) {
+    #searchToggle {
+        display: none !important;
+    }
+}
+
 
 /* Her0 section css */
 #hero {

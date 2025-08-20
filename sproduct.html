@@ -17,72 +17,76 @@
 
     <!-- ===== HEADER SECTION ===== -->
     <header id="header" class="shadow-sm sticky-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid px-lg-4">
 
                 <!-- Hamburger for mobile -->
                 <button class="btn navbar-toggler me-3" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#sideMenu" aria-controls="sideMenu">
+                    data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
 
-                <!-- Desktop Menu -->
-                <ul class="navbar-nav flex-row d-none d-lg-flex">
-                    <li class="nav-item mx-2 fw-bold">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item mx-2 fw-bold">
-                        <a href="shop.html" class="nav-link">Shop</a>
-                    </li>
-                    <li class="nav-item mx-2 fw-bold">
-                        <a href="blog.html" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item mx-2 fw-bold position-relative">
-                        <a href="arrivals.html" class="nav-link">New Arrivals</a>
-                    </li>
-                    <li class="nav-item mx-2 fw-bold">
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-
-                <!-- Logo -->
-                <a class="navbar-brand mx-auto d-none d-lg-block" href="#">
-                    <img src="./logo/SNAGFIT logo transparent.png" alt="SNAGFIT Logo" height="44">
+                <!-- Logo Left -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="./logo/SNAGFIT logo.png" alt="SNAGFIT Logo" height="42" />
                 </a>
 
-                <!-- Search & Icons -->
-                <div class="d-flex align-items-center ms-auto gap-2">
-                    <div class="search-container d-flex align-items-center me-2">
-                        <input type="text" id="searchInput" class="form-control" placeholder="What am I looking for?">
-                        <button id="micBtn" class="btn btn-link" type="button" aria-label="Voice Search"><i
-                                class="fas fa-microphone"></i></button>
-                        <button id="searchBtn" class="btn btn-link" type="button" aria-label="Search"><i
-                                class="fas fa-search"></i></button>
-                    </div>
+                <!-- Center Menu (desktop only) -->
+                <ul class="navbar-nav m-auto flex-row gap-3 d-none d-lg-flex">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="arrivals.html"
+                            class="nav-link bg-danger text-white rounded-pill px-3 fw-bold">Arrivals</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
 
-                    <a href="contact.html" class="btn btn-link"><i class="fas fa-map-marker-alt"></i></a>
-                    <a href="profile.html" class="btn btn-link"><i class="fas fa-user"></i></a>
-                    <a href="wishlist.html" class="btn btn-link"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="btn btn-link"><i class="fas fa-shopping-cart"></i></a>
+                <!-- Right Side -->
+                <div class="navbar-icons d-flex align-items-center gap-3 ms-auto">
+                    <!-- Search Icon -->
+                    <button id="searchToggle" class="btn btn-link px-0"><i class="fas fa-search"></i></button>
+                    <!-- Search Bar (hidden by default) -->
+                    <input type="text" id="searchBar" class="form-control d-none" placeholder="Search Products"
+                        style="width:220px;" />
+                    <!-- Other Icons -->
+                    <a href="wishlist.html" class="btn btn-link px-0"><i class="fas fa-heart"></i></a>
+                    <a href="profile.html" class="btn btn-link px-0"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="btn btn-link px-0 position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span
+                            class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- ===== END HEADER SECTION ===== -->
     <!-- Offcanvas Mobile Menu -->
+
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" aria-labelledby="sideMenuLabel">
         <div class="offcanvas-header">
-            <h5 id="sideMenuLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title fw-bold" id="sideMenuLabel">Navigation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="navbar-nav">
+            <!-- Search field inside menu -->
+            <div class="input-group mobile-search mb-3">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search products, pages.." />
+            </div>
+            <!-- Menu links -->
+            <ul class="nav flex-column gap-2">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+
                 <li class="nav-item"><a href="arrivals.html" class="nav-link">New Arrivals</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link fw-bold">Contact</a></li>
             </ul>
+            <div class="mt-3">
+                <a href="profile.html" class="d-block mb-2 nav-link"><i class="fas fa-user me-2"></i>Account</a>
+                <a href="wishlist.html" class="d-block mb-2 nav-link"><i class="fas fa-heart me-2"></i>Wishlist (0)</a>
+                <a href="cart.html" class="d-block nav-link"><i class="fas fa-shopping-cart me-2"></i>Cart (3)</a>
+            </div>
         </div>
     </div>
     <!-- Offcanvas Mobile Menu -->
@@ -344,46 +348,16 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.querySelector("#searchInput");
-            const micBtn = document.querySelector("#micBtn");
-            const searchBtn = document.querySelector("#searchBtn");
-
-            // Search Button Action
-            searchBtn.addEventListener("click", function () {
-                if (searchInput.value.trim() !== "") {
-                    alert("Searching for: " + searchInput.value);
-                    // Example redirect:
-                    // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
-                } else {
-                    alert("Please type something to search!");
-                }
-            });
-
-            // Mic Button (Speech Recognition)
-            if ('webkitSpeechRecognition' in window) {
-                const recognition = new webkitSpeechRecognition();
-                recognition.continuous = false;
-                recognition.lang = "en-US";
-
-                micBtn.addEventListener("click", function () {
-                    recognition.start();
-                });
-
-                recognition.onresult = function (event) {
-                    searchInput.value = event.results[0][0].transcript;
-                };
-
-                recognition.onerror = function () {
-                    alert("Voice recognition error. Please try again.");
-                };
-            } else {
-                micBtn.addEventListener("click", function () {
-                    alert("Speech recognition not supported in this browser.");
-                });
+        document.getElementById('searchToggle').addEventListener('click', function () {
+            const searchBar = document.getElementById('searchBar');
+            searchBar.classList.toggle('d-none');
+            if (!searchBar.classList.contains('d-none')) {
+                searchBar.focus();
             }
         });
+
     </script>
+
 
     <!-- footer section -->
     <script>
