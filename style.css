@@ -77,10 +77,6 @@ h6 {
     color: var(--red);
 }
 
-:root {
-    --brand-deep: #741c1c;
-}
-
 /* Header background and shadow */
 #header {
     background: #f7f3e3;
@@ -2183,6 +2179,147 @@ footer .row>div:nth-child(4) {
     font-size: 1.1rem;
     box-shadow: 0 6px 22px rgba(255, 49, 49, 0.3);
     border-radius: 30px;
+}
+
+:root {
+    --brand-dark: #0d0d0d;
+}
+
+body {
+    background: #f7f3e3;
+    font-family: 'Celandine', 'Inter', Arial, sans-serif;
+    color: #441515;
+    line-height: 1.7;
+}
+
+.about-header {
+    background: linear-gradient(100deg, #ff3131 0%, #f7f3e3 95%);
+    color: #fff;
+    padding: 54px 0 36px 0;
+    text-align: center;
+    box-shadow: 0 6px 28px rgba(116, 28, 28, 0.13);
+}
+
+.about-header h1 {
+    font-family: 'Celandine', cursive, serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.about-header p {
+    color: #fff;
+    font-size: 1.25rem;
+    opacity: 0.98;
+}
+
+.brand-mission,
+.brand-values,
+.why-choose,
+.team-section {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 26px rgba(0, 0, 0, 0.07);
+    padding: 40px 30px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s;
+}
+
+.brand-mission:hover,
+.brand-values:hover,
+.why-choose:hover,
+.team-section:hover {
+    box-shadow: 0 12px 40px rgba(255, 49, 49, 0.16);
+}
+
+.brand-values ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.brand-values li {
+    padding: 8px 0;
+    font-size: 1.09rem;
+}
+
+.brand-values i {
+    color: #ff3131;
+    margin-right: 10px;
+}
+
+.why-choose .icon-box {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.why-choose .icon-box i {
+    font-size: 2.4rem;
+    color: #ff3131;
+    margin-bottom: 10px;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    box-shadow: 0 3px 16px rgba(255, 49, 49, 0.13);
+}
+
+.team-member h6 {
+    margin-top: 14px;
+    font-weight: 800;
+    font-size: 1.09rem;
+}
+
+.about-cta {
+    background: #ff3131;
+    color: #fff;
+    border-radius: 16px;
+    text-align: center;
+    padding: 36px 20px;
+    margin-top: 36px;
+    box-shadow: 0 6px 24px rgba(255, 49, 49, 0.18);
+}
+
+.about-cta a {
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff3131;
+    background-color: #fff;
+    padding: 10px 38px;
+    border-radius: 36px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(116, 28, 28, 0.17);
+}
+
+.about-cta a:hover {
+    background: #ffe5e5;
+    color: #ff3131;
+}
+
+@media (max-width: 991px) {
+
+    .brand-mission,
+    .brand-values,
+    .why-choose,
+    .team-section,
+    .about-cta {
+        padding: 26px 12px;
+    }
+
+    .about-header h1 {
+        font-size: 2.1rem;
+    }
 }
 
 /* Responsive tweaks */
