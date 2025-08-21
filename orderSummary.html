@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNAGFIT | Delivery Address</title>
+    <title>SNAGFIT | Order Summary</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -113,10 +113,10 @@
         <a href="login.html" class="checkout-step">
             <i class="fas fa-sign-in-alt me-2"></i>Login
         </a>
-        <a href="delivery_address.html" class="checkout-step active">
+        <a href="delivery_address.html" class="checkout-step ">
             <i class="fas fa-map-marker-alt me-2"></i>Delivery Address
         </a>
-        <a href="orderSummary.html" class="checkout-step">
+        <a href="orderSummary.html" class="checkout-step active">
             <i class="fas fa-box-open me-2"></i>Order Summary
         </a>
         <a href="payment.html" class="checkout-step">
@@ -124,63 +124,65 @@
         </a>
     </nav>
 
-    <!-- Delivery Address Form Section -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="address-card p-4">
-                    <h3 class="fw-bold mb-3 text-center"><i class="fas fa-location-dot text-danger me-2"></i>Delivery
-                        Address</h3>
-                    <form class="address-form" id="addressForm" autocomplete="off">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="fullName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label">Mobile Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="10-digit mobile"
-                                    maxlength="15" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address"
-                                    placeholder="House/Flat, Street, Landmark" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="city" class="form-label">City</label>
-                                <input type="text" class="form-control" id="city" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="pincode" class="form-label">Pin Code</label>
-                                <input type="text" class="form-control" id="pincode" maxlength="10" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="state" class="form-label">State</label>
-                                <input type="text" class="form-control" id="state" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="country" class="form-label">Country</label>
-                                <input type="text" class="form-control" id="country" value="India" required>
-                            </div>
-                        </div>
-                        <div class="mt-3 text-center">
-                            <button type="submit" class="btn btn-danger px-5 fs-5">Save & Continue</button>
-                        </div>
-                    </form>
+    <main class="container py-5">
+        <h1 class="text-center fw-bold mb-5" style="color: var(--snagfit-red)">Order Summary</h1>
+
+        <!-- Ordered Products Section -->
+        <section class="summary-card">
+            <h2 class="section-title">Your Items</h2>
+
+            <!-- Product Item 1 -->
+            <div class="d-flex align-items-center product-row">
+                <img src="images/tshirt.jpg" alt="Red Cotton T-Shirt" class="product-img me-4" />
+                <div class="product-details flex-grow-1">
+                    <h6>Red Cotton T-Shirt</h6>
+                    <small>Size: M | Quantity: 1</small>
                 </div>
+                <div class="price text-end" style="min-width: 90px;">₹799</div>
+                <div class="total fw-bold ms-4">₹799</div>
             </div>
-            <!-- Address Preview -->
-            <div class="col-lg-4">
-                <div class="preview-address">
-                    <h6>Preview Address</h6>
-                    <div id="previewContent" class="lh-base text-secondary" style="min-height: 120px;">
-                        Enter your details to preview your delivery address here.
-                    </div>
+
+            <!-- Product Item 2 -->
+            <div class="d-flex align-items-center product-row">
+                <img src="images/hoodie.jpg" alt="Black Hoodie" class="product-img me-4" />
+                <div class="product-details flex-grow-1">
+                    <h6>Black Hoodie</h6>
+                    <small>Size: L | Quantity: 2</small>
                 </div>
+                <div class="price text-end" style="min-width: 90px;">₹1,299</div>
+                <div class="total fw-bold ms-4">₹2,598</div>
             </div>
-        </div>
-    </div>
+
+            <hr class="my-3" />
+            <div class="d-flex justify-content-between fw-bold fs-5">
+                <div>Subtotal:</div>
+                <div>₹3,397</div>
+            </div>
+            <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
+                <div>Shipping:</div>
+                <div>₹100</div>
+            </div>
+            <div class="d-flex justify-content-between fw-bold fs-4" style="color: var(--snagfit-red)">
+                <div>Total:</div>
+                <div>₹3,497</div>
+            </div>
+        </section>
+
+        <!-- Delivery Address Section -->
+        <section class="address-box">
+            <h5>Shipping Address
+                <a href="delivery_address.html" class="edit-link">Edit</a>
+            </h5>
+            <p><strong>John Doe</strong></p>
+            <p>123 Main Street</p>
+            <p>Delhi, 110001</p>
+            <p>India</p>
+            <p>Phone: +91 9876543210</p>
+        </section>
+
+        <!-- Payment Button -->
+        <button class="btn btn-primary" onclick="window.location.href='payment.html'">Proceed to Payment</button>
+    </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="pt-5">
@@ -307,35 +309,6 @@
                 observer.observe(col);
             });
         });
-
-    </script>
-
-    <script>
-        // Live Address Preview JS
-        // Live Address Preview JS
-        const previewFields = ["fullName", "phone", "address", "city", "pincode", "state", "country"];
-        const previewContent = document.getElementById('previewContent');
-
-        function updatePreview() {
-            const vals = {};
-            previewFields.forEach(id => vals[id] = document.getElementById(id).value.trim());
-
-            let lines = [];
-            if (vals.fullName) lines.push(`<b>${vals.fullName}</b>`);
-            if (vals.phone) lines.push(`☎️ ${vals.phone}`);
-            if (vals.address) lines.push(vals.address);
-
-            // City, Pincode, State as one line if any
-            let cityLine = [vals.city, vals.pincode, vals.state].filter(Boolean).join(', ');
-            if (cityLine) lines.push(cityLine);
-
-            if (vals.country) lines.push(vals.country);
-
-            previewContent.innerHTML = lines.length
-                ? lines.join('<br>')
-                : "Enter your details to preview your delivery address here.";
-        }
-        previewFields.forEach(id => document.getElementById(id).addEventListener('input', updatePreview));
 
     </script>
 </body>
