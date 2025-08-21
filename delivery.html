@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNAGFIT | About Us</title>
+    <title>SNAGFIT | Delivery Address</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -109,12 +109,22 @@
     </div>
 
     <!-- Progress Steps -->
-    <div class="checkout-steps">
-        <div class="checkout-step"><i class="fas fa-sign-in-alt me-2"></i>Login</div>
-        <div class="checkout-step active"><i class="fas fa-map-marker-alt me-2"></i>Delivery Address</div>
-        <div class="checkout-step"><i class="fas fa-box-open me-2"></i>Order Summary</div>
-        <div class="checkout-step"><i class="fas fa-credit-card me-2"></i>Payment</div>
-    </div>
+    <!-- Progress Steps with Clickable Links -->
+    <nav class="checkout-steps my-4" aria-label="Order steps">
+        <a href="login.html" class="checkout-step">
+            <i class="fas fa-sign-in-alt me-2"></i>Login
+        </a>
+        <a href="delivery.html" class="checkout-step active">
+            <i class="fas fa-map-marker-alt me-2"></i>Delivery Address
+        </a>
+        <a href="ordersummary.html" class="checkout-step">
+            <i class="fas fa-box-open me-2"></i>Order Summary
+        </a>
+        <a href="payment.html" class="checkout-step">
+            <i class="fas fa-credit-card me-2"></i>Payment
+        </a>
+    </nav>
+
 
     <!-- Delivery Address Form Section -->
     <div class="container">

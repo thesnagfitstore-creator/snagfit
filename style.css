@@ -2307,51 +2307,67 @@ body {
     color: #ff3131;
 }
 
-:root {
-    --snagfit-red: #ff3131;
-    --snagfit-wine: #441515;
-    --snagfit-cream: #f7f3e3;
-    --snagfit-gray: #f4f4f4;
-}
-
-body {
-    background: var(--snagfit-cream);
-    font-family: 'Inter', Arial, sans-serif;
-    color: var(--snagfit-wine);
-}
-
 /* Progress bar */
 .checkout-steps {
-    margin: 30px auto 40px auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 1rem 2rem;
+    margin-top: 48px !important;
+    margin-bottom: 40px;
+    padding: 0 12px;
 }
 
 .checkout-step {
+    flex: 1 1 120px;
+    /* Allow items to shrink and wrap, minimum width 120px */
+    max-width: 180px;
     font-weight: 700;
-    font-size: 1.07rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
-    color: var(--snagfit-wine);
+    color: #441515;
     position: relative;
-    opacity: .7;
+    opacity: 0.7;
+    text-decoration: none;
+    padding: 6px 10px;
+    transition: background 0.14s, color 0.2s;
+    justify-content: center;
+    /* Center content on smaller widths */
+    box-sizing: border-box;
 }
 
-.checkout-step.active {
-    color: var(--snagfit-red);
-    opacity: 1;
-}
-
+/* Adjust arrow spacing for wrapped rows */
 .checkout-step:not(:last-child)::after {
     content: '\f054';
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    color: var(--snagfit-red);
-    margin: 0 18px;
-    font-size: 1.18rem;
-    opacity: .7;
+    color: #ff3131;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Remove arrow on last item */
+.checkout-step:last-child::after {
+    content: none;
+}
+
+.checkout-step:hover,
+.checkout-step:focus {
+    color: #ff3131;
+    opacity: 1;
+}
+
+.checkout-step.active {
+    color: #ff3131;
+    opacity: 1;
+    pointer-events: none;
 }
 
 .address-card {
@@ -2363,16 +2379,16 @@ body {
 
 .address-form label {
     font-weight: 600;
-    color: var(--snagfit-wine);
+    color: #441515;
 }
 
 .form-control:focus {
-    border-color: var(--snagfit-red);
+    border-color: #ff3131;
     box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.08);
 }
 
 .preview-address {
-    background: var(--snagfit-gray);
+    background: #f4f4f4;
     padding: 28px 18px 16px 18px;
     border-radius: 14px;
     margin-top: 24px;
@@ -2381,19 +2397,26 @@ body {
 }
 
 .preview-address h6 {
-    color: var(--snagfit-red);
+    color: #ff3131;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
+/* Smaller screens adjustments */
+@media (max-width: 576px) {
     .checkout-steps {
-        gap: 14px;
-        font-size: .89rem;
+        gap: 0.8rem 1rem;
     }
 
-    .address-form {
-        padding: 22px 5px !important;
+    .checkout-step {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+
+    .checkout-step:not(:last-child)::after {
+        display: none;
     }
 }
 
